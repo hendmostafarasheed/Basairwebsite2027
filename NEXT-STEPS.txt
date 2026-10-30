@@ -1,0 +1,10 @@
+الخطوات التالية:
+1) انشري مجلد server كـ Render Web Service (Root Directory: server).
+2) جهزي PostgreSQL ونفذي server/sql/schema.sql.
+3) ضعي المتغيرات السرية في Render Environment فقط.
+4) عدلي API_BASE في portal.html إلى عنوان Render.
+5) اضبطي CORS_ORIGINS على رابط GitHub Pages.
+6) ارفعي ملفات الموقع إلى GitHub Pages.
+7) أنشئي حساب الإدارة الأول من أمر npm run admin:create بعد ضبط متغيرات BOOTSTRAP_* مؤقتًا.
+8) اختبري الحسابات والحلقات والكاميرا والميكروفون على أجهزة فعلية.
+لا تضعي كلمات مرور أو مفاتيح سرية داخل ملفات الموقع أو GitHub.

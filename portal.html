@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102c48">
+<title>دخول الفصول | منصة بصائر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#102c48;--navy2:#193d60;--gold:#c6a15a;--cream:#fbfaf7;--muted:#627388;--green:#28765d;--red:#a63d3d}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--navy);font-family:Cairo,Tahoma,sans-serif}
+a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}
+.top{height:5px;background:linear-gradient(90deg,var(--navy),var(--gold),#6c9c9f,var(--gold),var(--navy))}
+header{background:#fff;border-bottom:1px solid #e8dfcc;padding:13px 4%;display:flex;justify-content:space-between;align-items:center;gap:12px;position:sticky;top:0;z-index:5}
+.brand{font-weight:800;display:flex;align-items:center;gap:10px}.mark{width:42px;height:42px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;font:28px Amiri;color:var(--gold)}
+.btn{border:1px solid var(--gold);background:linear-gradient(135deg,#e5c987,#bb914a);color:#102c48;border-radius:30px;padding:10px 20px;font-weight:800}
+.btn.dark{background:var(--navy);border-color:var(--navy);color:white}.btn.ghost{background:#fff;color:var(--navy)}.btn.red{background:#a63d3d;border-color:#a63d3d;color:white}.btn:disabled{opacity:.5;cursor:not-allowed}
+.wrap{width:min(1100px,92%);margin:32px auto 70px}.intro{text-align:center;margin-bottom:25px}.intro h1{font:42px Amiri;margin:5px}.intro p{color:var(--muted);line-height:1.9;margin:0}
+.panel{background:white;border:1px solid #e8dfcc;border-radius:20px;padding:25px;box-shadow:0 12px 35px #102c480d;margin:18px 0}
+.auth{max-width:470px;margin:28px auto}.auth h2,.panel h2{font:30px Amiri;margin:0 0 8px}.muted{color:var(--muted);font-size:14px;line-height:1.8}
+.field{margin:15px 0}.field label{display:block;font-size:13px;font-weight:800;margin-bottom:6px}.field input{width:100%;padding:12px;border:1px solid #d6dce2;border-radius:11px;background:white}
+.msg{padding:12px 14px;border-radius:10px;margin:12px 0;font-size:13px;line-height:1.8;display:none}.msg.error{display:block;background:#fff0ef;color:#8f2929}.msg.ok{display:block;background:#edf8f1;color:#246344}
+.hidden{display:none!important}.userbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.role{font-size:12px;color:#8c672d;background:#f7f0df;border-radius:20px;padding:5px 12px;font-weight:800}
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:18px}.room{border:1px solid #e6dcc7;border-radius:16px;padding:18px;background:#fff}.room h3{margin:0 0 6px}.room p{font-size:13px;color:var(--muted);line-height:1.8;min-height:45px}
+.livehead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.livehead h2{margin:0}.livegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:13px;margin-top:18px}
+.tile{background:#0b2033;border-radius:14px;min-height:180px;position:relative;overflow:hidden;display:grid;place-items:center;color:#fff}.tile video{width:100%;height:100%;min-height:180px;object-fit:cover}.tile .name{position:absolute;bottom:9px;right:10px;background:#0009;border-radius:20px;padding:4px 10px;font-size:12px}.tile .avatar{font:24px Amiri;color:#e8cd8e}
+.controls{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}.controls button{padding:9px 15px}.lower{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:16px}.subpanel{border:1px solid #e8dfcc;border-radius:14px;padding:16px}.subpanel h3{margin:0 0 10px}.chatlog{height:170px;overflow:auto;background:#f8f7f3;border-radius:10px;padding:10px;font-size:13px}.chatrow{display:flex;gap:8px;margin-top:8px}.chatrow input{flex:1;min-width:0;padding:9px;border:1px solid #d6dce2;border-radius:9px}
+.participants{font-size:13px;line-height:2}.participant{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid #eee;padding:5px 0}.hand{color:#a07835;font-weight:800}
+footer{text-align:center;color:#758292;font-size:12px;padding:20px}
+@media(max-width:700px){.rooms{grid-template-columns:1fr}.lower{grid-template-columns:1fr}.intro h1{font-size:34px}.panel{padding:17px}.wrap{margin-top:22px}}
+</style>
+
+<style>
+/* BASAIR WHITE / NAVY / GOLD PORTAL THEME */
+:root{--navy:#102c48;--navy2:#193d60;--gold:#c6a15a;--cream:#fff;--muted:#627388;--green:#28765d;--red:#a63d3d}
+body{background:#fff;color:var(--navy)}
+.top{background:linear-gradient(90deg,#102c48,#c6a15a,#6c9c9f,#c6a15a,#102c48)}
+header{background:rgba(255,255,255,.97);border-bottom:1px solid #e9dfca;box-shadow:0 4px 18px rgba(16,44,72,.05)}
+.mark{border-color:var(--gold);color:var(--gold);background:#fff}
+.btn{border:1px solid var(--gold);background:linear-gradient(135deg,#e5c987,#bb914a);color:#102c48;box-shadow:0 7px 18px rgba(168,125,60,.12)}
+.btn.dark{background:var(--navy);border-color:var(--navy);color:#fff}.btn.dark:hover{background:#193d60}.btn.ghost{background:#fff;color:var(--navy);border-color:#d8c79f}.btn.red{background:#a63d3d;border-color:#a63d3d;color:#fff}
+.wrap{width:min(1100px,92%);margin:32px auto 70px}.intro h1{font:42px Amiri,serif;color:var(--navy)}
+.panel{background:#fff;border:1px solid #e8dfcc;border-radius:20px;box-shadow:0 12px 35px rgba(16,44,72,.07)}
+.auth{border-top:3px solid var(--gold)}.auth h2,.panel h2{font:30px Amiri,serif;color:var(--navy)}
+.muted{color:var(--muted)}.field input{border:1px solid #d7dce0;background:#fff;color:var(--navy)}.field input:focus{outline:3px solid rgba(198,161,90,.25);border-color:var(--gold)}
+.msg.ok{background:#edf8f1;color:#246344}.msg.error{background:#fff0ef;color:#8f2929}
+.tile,.room-card,.participant{border-color:#e8dfcc}.room-card{background:#fff;box-shadow:0 8px 24px rgba(16,44,72,.05)}
+#classroom{background:#f7f8fa}.video-grid,.chat-log,.participants{border-color:#dfe4e8}
+@media(max-width:650px){.wrap{margin-top:22px}.intro h1{font-size:35px}.panel{padding:19px}}
+</style>
+</head>
+<body>
+<div class="top"></div>
+<header><a class="brand" href="index.html"><span class="mark">ب</span><span>منصة بصائر<br><small style="font-size:11px;color:#8a7042">نور العلم والهداية</small></span></a><a class="btn ghost" href="index.html">العودة للموقع</a></header>
+<main class="wrap">
+  <div class="intro"><h1>الفصول المباشرة</h1><p>مساحة تعليمية آمنة للمحاضرين والطلاب داخل منصة بصائر.</p></div>
+
+  <section class="panel auth" id="loginPanel">
+    <h2>تسجيل الدخول</h2><p class="muted">استخدم بيانات الحساب التي وفرتها لك إدارة المنصة.</p>
+    <div id="loginMsg" class="msg"></div>
+    <form id="loginForm">
+      <div class="field"><label for="email">البريد الإلكتروني</label><input id="email" type="email" autocomplete="username" required></div>
+      <div class="field"><label for="password">كلمة المرور</label><input id="password" type="password" autocomplete="current-password" required></div>
+      <button class="btn" style="width:100%" type="submit" id="loginBtn">دخول آمن</button>
+    </form>
+    <p class="muted" style="font-size:11px;margin-top:14px">لا يوجد إنشاء حساب ذاتي. يتم إنشاء الحسابات وتحديد صلاحياتها من الإدارة.</p>
+  </section>
+
+  <section class="panel hidden" id="dashboard">
+    <div class="userbar"><div><h2 id="welcome">مرحبًا</h2><div class="muted" id="accountEmail"></div></div><div style="display:flex;gap:9px;align-items:center"><span class="role" id="roleLabel"></span><button class="btn ghost" id="logoutBtn">تسجيل الخروج</button></div></div>
+    <div id="dashMsg" class="msg"></div>
+    <h3 style="margin:22px 0 5px">الحلقات المتاحة لحسابك</h3>
+    <p class="muted">تظهر هنا الحلقات التي خصصتها الإدارة لهذا الحساب فقط.</p>
+    <div class="rooms" id="roomsList"></div>
+  </section>
+
+  <section class="panel hidden" id="classroom">
+    <div class="livehead"><div><h2 id="classTitle">الفصل المباشر</h2><div class="muted" id="classStatus">جارٍ الاتصال...</div></div><button class="btn ghost" id="backDash">العودة للحلقات</button></div>
+    <div id="liveMsg" class="msg"></div>
+    <div class="livegrid" id="videoGrid"></div>
+    <div class="controls">
+      <button class="btn dark" id="micBtn">🎙️ تشغيل الميكروفون</button>
+      <button class="btn dark" id="camBtn">📷 تشغيل الكاميرا</button>
+      <button class="btn ghost" id="screenBtn">🖥️ مشاركة الشاشة</button>
+      <button class="btn ghost" id="handBtn">✋ رفع اليد</button>
+      <button class="btn red" id="leaveBtn">إنهاء / مغادرة الفصل</button>
+    </div>
+    <div class="lower">
+      <div class="subpanel"><h3>💬 المحادثة</h3><div class="chatlog" id="chatLog" aria-live="polite"></div><form class="chatrow" id="chatForm"><input id="chatInput" maxlength="500" placeholder="اكتب رسالة..." autocomplete="off"><button class="btn" type="submit">إرسال</button></form></div>
+      <div class="subpanel"><h3>👥 المشاركون وطلبات التحدث</h3><div class="participants" id="participants"></div><p class="muted" id="teacherHint">يمكن للمحاضر متابعة طلبات رفع اليد. مشاركة الطالب للصوت تحتاج موافقة المحاضر.</p></div>
+    </div>
+  </section>
+</main>
+<footer>© منصة بصائر — جميع الحقوق محفوظة</footer>
+<script type="module">
+import { Room, RoomEvent, Track, VideoPresets } from 'https://esm.sh/livekit-client@2.15.6';
+
+const API_BASE = 'https://YOUR-RENDER-SERVICE.onrender.com'; // استبدلي هذا العنوان بعنوان خدمة Render بعد نشرها
+const ROOM_INFO = {
+  quran: {name:'حلقة تحفيظ القرآن', description:'حلقة التحفيظ والتسميع المباشر'},
+  tajweed: {name:'حلقة التجويد والتلاوة', description:'التعلم المباشر وتصحيح التلاوة'},
+  sharia: {name:'حلقة العلوم الشرعية', description:'حلقة العلوم الشرعية'}
+};
+let authToken = null, currentUser = null, activeRoom = null, activeRoomKey = null;
+let micEnabled = false, cameraEnabled = false, screenEnabled = false, handRaised = false;
+const $ = id => document.getElementById(id);
+const show = id => $(id).classList.remove('hidden');
+const hide = id => $(id).classList.add('hidden');
+function message(id, text, type='error'){const el=$(id);el.textContent=text;el.className='msg '+type;}
+function clearMessage(id){const el=$(id);el.textContent='';el.className='msg';}
+async function api(path, options={}) {
+  const response = await fetch(API_BASE + path, {
+    ...options,
+    headers: {'Content-Type':'application/json', ...(authToken?{Authorization:'Bearer '+authToken}:{}), ...(options.headers||{})}
+  });
+  const data = await response.json().catch(()=>({}));
+  if(!response.ok) throw new Error(data.error || 'تعذر إتمام الطلب.');
+  return data;
+}
+function roleName(role){return ({admin:'مدير المنصة',teacher:'محاضر',student:'طالب'})[role]||role;}
+async function loadDashboard(){
+  const data=await api('/api/rooms');
+  $('welcome').textContent='مرحبًا، '+currentUser.fullName;
+  $('accountEmail').textContent=currentUser.email;
+  $('roleLabel').textContent=roleName(currentUser.role);
+  $('roomsList').innerHTML='';
+  if(!data.rooms.length){$('roomsList').innerHTML='<p class="muted">لا توجد حلقات مخصصة لهذا الحساب حتى الآن. تواصل مع الإدارة.</p>';return;}
+  for(const room of data.rooms){
+    const info=ROOM_INFO[room.key];
+    const card=document.createElement('article');card.className='room';
+    const h=document.createElement('h3');h.textContent=info?.name||room.name;
+    const p=document.createElement('p');p.textContent=info?.description||'حلقة تعليمية مباشرة';
+    const b=document.createElement('button');b.className='btn';b.textContent=currentUser.role==='teacher'?'ابدأ الحلقة':'دخول الحلقة';
+    b.addEventListener('click',()=>enterRoom(room.key));
+    card.append(h,p,b);$('roomsList').append(card);
+  }
+}
+$('loginForm').addEventListener('submit',async e=>{
+  e.preventDefault();clearMessage('loginMsg');$('loginBtn').disabled=true;$('loginBtn').textContent='جارٍ التحقق...';
+  try{
+    const data=await api('/api/auth/login',{method:'POST',body:JSON.stringify({email:$('email').value.trim(),password:$('password').value})});
+    authToken=data.token;currentUser=data.user;
+    await loadDashboard();hide('loginPanel');show('dashboard');
+  }catch(err){message('loginMsg',err.message);}
+  finally{$('loginBtn').disabled=false;$('loginBtn').textContent='دخول آمن';}
+});
+$('logoutBtn').onclick=()=>{leaveRoom(false);authToken=null;currentUser=null;hide('dashboard');show('loginPanel');$('password').value='';};
+async function enterRoom(key){
+  clearMessage('dashMsg');
+  try{
+    if(currentUser.role==='teacher') await api('/api/teacher/rooms/'+key+'/start',{method:'POST',body:'{}'});
+    const data=await api('/api/live/token',{method:'POST',body:JSON.stringify({roomKey:key})});
+    activeRoomKey=key;activeRoom=new Room({adaptiveStream:true,dynacast:true});
+    activeRoom.on(RoomEvent.TrackSubscribed,(track,publication,participant)=>attachTrack(track,participant));
+    activeRoom.on(RoomEvent.TrackUnsubscribed,(track)=>track.detach().forEach(el=>el.remove()));
+    activeRoom.on(RoomEvent.ParticipantConnected,renderParticipants);
+    activeRoom.on(RoomEvent.ParticipantDisconnected,renderParticipants);
+    activeRoom.on(RoomEvent.DataReceived,(payload,participant)=>handleData(payload,participant));
+    activeRoom.on(RoomEvent.LocalTrackPublished,()=>renderParticipants());
+    activeRoom.on(RoomEvent.LocalTrackUnpublished,()=>renderParticipants());
+    activeRoom.on(RoomEvent.Disconnected,()=>{$('classStatus').textContent='انقطع الاتصال';});
+    await activeRoom.connect(data.serverUrl,data.token);
+    hide('dashboard');show('classroom');$('classTitle').textContent=ROOM_INFO[key].name;
+    $('classStatus').textContent='متصل — '+roleName(currentUser.role);
+    $('teacherHint').textContent=currentUser.role==='teacher'?'أنت المحاضر. ستظهر طلبات رفع اليد هنا.':'يمكنك رفع يدك لطلب المشاركة الصوتية من المحاضر.';
+    renderParticipants();
+  }catch(err){message('dashMsg',err.message);}
+}
+function attachTrack(track,participant){
+  const grid=$('videoGrid');let tile=document.getElementById('tile-'+participant.identity);
+  if(!tile){tile=document.createElement('div');tile.className='tile';tile.id='tile-'+participant.identity;const name=document.createElement('span');name.className='name';name.textContent=participant.name||participant.identity;tile.append(name);grid.append(tile);}
+  if(track.kind===Track.Kind.Video||track.kind===Track.Kind.ScreenShare){const el=track.attach();el.autoplay=true;el.playsInline=true;tile.prepend(el);}
+}
+function renderParticipants(){
+  if(!activeRoom)return;
+  $('participants').innerHTML='';
+  const all=[activeRoom.localParticipant,...activeRoom.remoteParticipants.values()];
+  for(const p of all){
+    const row=document.createElement('div');row.className='participant';
+    const label=document.createElement('span');label.textContent=(p.name||p.identity)+(p===activeRoom.localParticipant?' (أنت)':'');
+    const status=document.createElement('span');status.textContent=p.isSpeaking?'يتحدث الآن':'متصل';
+    row.append(label,status);$('participants').append(row);
+  }
+}
+const enc=new TextEncoder(),dec=new TextDecoder();
+async function sendData(obj){if(!activeRoom)return;await activeRoom.localParticipant.publishData(enc.encode(JSON.stringify(obj)),{reliable:true});}
+function handleData(payload,participant){
+  let data;try{data=JSON.parse(dec.decode(payload));}catch{return;}
+  if(data.type==='chat'){const line=document.createElement('div');line.textContent=(participant?.name||'مشارك')+': '+data.text;$('chatLog').append(line);$('chatLog').scrollTop=$('chatLog').scrollHeight;}
+  if(data.type==='hand'){const line=document.createElement('div');line.className='hand';line.textContent='✋ طلب رفع يد من '+(participant?.name||'طالب');$('participants').append(line);}
+  if(data.type==='hand-approved'){const line=document.createElement('div');line.className='hand';line.textContent='تم قبول طلب المشاركة. تواصل مع المحاضر لفتح الميكروفون.';$('participants').append(line);}
+}
+$('chatForm').onsubmit=async e=>{e.preventDefault();const text=$('chatInput').value.trim();if(!text)return;try{await sendData({type:'chat',text});const line=document.createElement('div');line.textContent='أنت: '+text;$('chatLog').append(line);$('chatInput').value='';}catch(err){message('liveMsg',err.message);}};
+$('handBtn').onclick=async()=>{try{handRaised=!handRaised;await sendData({type:'hand',raised:handRaised});$('handBtn').textContent=handRaised?'✋ إلغاء رفع اليد':'✋ رفع اليد';}catch(err){message('liveMsg',err.message);}};
+$('micBtn').onclick=async()=>{if(!activeRoom)return;if(currentUser.role==='student'){message('liveMsg','الميكروفون مغلق افتراضيًا للطلاب. اطلب الإذن من المحاضر أولًا.','ok');return;}try{micEnabled=!micEnabled;await activeRoom.localParticipant.setMicrophoneEnabled(micEnabled);$('micBtn').textContent=micEnabled?'🔇 إيقاف الميكروفون':'🎙️ تشغيل الميكروفون';}catch(err){message('liveMsg',err.message);}};
+$('camBtn').onclick=async()=>{if(!activeRoom||currentUser.role==='student'){message('liveMsg','تشغيل كاميرا الطالب غير متاح في إعدادات هذه المرحلة.','ok');return;}try{cameraEnabled=!cameraEnabled;await activeRoom.localParticipant.setCameraEnabled(cameraEnabled,{videoPreset:VideoPresets.h720});$('camBtn').textContent=cameraEnabled?'📷 إيقاف الكاميرا':'📷 تشغيل الكاميرا';}catch(err){message('liveMsg',err.message);}};
+$('screenBtn').onclick=async()=>{if(!activeRoom||currentUser.role==='student'){message('liveMsg','مشاركة الشاشة متاحة للمحاضر في هذه المرحلة.','ok');return;}try{screenEnabled=!screenEnabled;await activeRoom.localParticipant.setScreenShareEnabled(screenEnabled);$('screenBtn').textContent=screenEnabled?'إيقاف مشاركة الشاشة':'🖥️ مشاركة الشاشة';}catch(err){message('liveMsg',err.message);}};
+async function leaveRoom(returnToDashboard=true){
+  if(activeRoom){try{await activeRoom.disconnect();}catch{}activeRoom=null;}
+  activeRoomKey=null;$('videoGrid').innerHTML='';$('participants').innerHTML='';$('chatLog').innerHTML='';
+  micEnabled=false;cameraEnabled=false;screenEnabled=false;handRaised=false;
+  $('micBtn').textContent='🎙️ تشغيل الميكروفون';$('camBtn').textContent='📷 تشغيل الكاميرا';$('screenBtn').textContent='🖥️ مشاركة الشاشة';$('handBtn').textContent='✋ رفع اليد';
+  if(returnToDashboard){hide('classroom');show('dashboard');}
+}
+$('leaveBtn').onclick=()=>leaveRoom(true);$('backDash').onclick=()=>leaveRoom(true);
+</script>
+</body></html>
